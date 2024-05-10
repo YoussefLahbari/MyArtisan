@@ -13,16 +13,44 @@ In Morocco, artisans often work independently, relying on word-of-mouth referral
 - **Real-Time Communication:** Built-in chat functionality allows seamless communication between artisans and clients to discuss project details and requirements.
 - **Admin Dashboard:** Administrators have access to an admin dashboard for managing user accounts, monitoring activity, and generating insights through analytics.
 
-## Installation
+## Getting Started
 
-To run MyArtisan locally, follow these steps:
+To contribute to MyArtisan, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/YoussefLahbari/MyArtisan.git`
-2. Install dependencies: `composer install && npm install`
-3. Set up environment variables: Rename `.env.example` to `.env` and configure database settings and other environment variables.
-4. Generate application key: `php artisan key:generate`
-5. Migrate and seed the database: `php artisan migrate --seed`
-6. Start the development server: `php artisan serve`
+1. **Fork the Repository**:
+   - Click on the "Fork" button at the top-right corner of the repository page to create a copy of the repository in your GitHub account.
+
+2. **Clone Your Fork**:
+   - Clone your forked repository to your local machine using the `git clone` command:
+     ```
+     git clone https://github.com/YoussefLahbari/MyArtisan.git
+     ```
+
+3. **Create a Feature Branch**:
+   - Create a new feature branch based on the main branch using the naming convention described above:
+     ```
+     git checkout -b lastname.key-description-word
+     ```
+
+4. **Work on Your Feature**:
+   - Implement your feature or task in the feature branch, making regular commits as you progress:
+     ```
+     git add .
+     git commit -m "Your descriptive commit message"
+     git push origin lastname.key-description-word
+     ```
+
+5. **Submit a Pull Request**:
+   - Once your feature is ready, submit a pull request from your feature branch to the main branch of the original repository:
+     - Navigate to your forked repository on GitHub and click on the "New pull request" button.
+     - Select the main branch of the original repository as the base branch and your feature branch as the compare branch.
+     - Provide a clear title and description for your pull request, explaining the changes you've made.
+     - Click on the "Create pull request" button to submit your pull request.
+
+6. **Review and Merge**:
+   - Participate in the code review process by reviewing pull requests from other team members and addressing feedback on your own pull requests.
+   - After approval, your pull request will be merged into the main branch, and your changes will become part of the project.
+
 
 ## Usage
 
