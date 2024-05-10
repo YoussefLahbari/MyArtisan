@@ -72,10 +72,10 @@ This project and its source code are proprietary and confidential. No part of th
 
 For any inquiries or further information about MyArtisan, please contact the project maintainers:
 
-- Youssef Lahbari: youssef.lahbari@example.com
-- Youssef Ghafir: youssef.ghafir@example.com
-- Youssef Keblaoui: youssef.keblaoui@example.com
-- Abderahman Zarria: abderahman.zarria@example.com
-- Mohammed Mokhtari: mohammed.mokhtari@example.com
+- Youssef Lahbari: 2003050800361@ofppt-edu.ma
+- Youssef Ghafir: 2004062800157@ofppt-edu.ma
+- Youssef Keblaoui: kablaoui.youssef@ofppt-edu.ma
+- Abderahman Zarria: 2004022900160@ofppt-edu.ma
+- Mohammed Mokhtari: 2003032600307@ofppt-edu.ma
 
 
