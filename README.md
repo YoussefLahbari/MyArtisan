@@ -17,40 +17,50 @@ In Morocco, artisans often work independently, relying on word-of-mouth referral
 
 To contribute to MyArtisan, follow these steps:
 
-1. **Fork the Repository**:
-   - Click on the "Fork" button at the top-right corner of the repository page to create a copy of the repository in your GitHub account.
+1. **Request Contribution Access**:
+   - Since MyArtisan is a private repository, send your GitHub username to the project manager (`Youssef Lahbari`) to be added as a contributor. Once your request is approved, you'll receive access to contribute to the repository. Make sure you have your GitHub credentials (username and password or personal access token) ready for authentication.
 
-2. **Clone Your Fork**:
-   - Clone your forked repository to your local machine using the `git clone` command:
-     ```
+2. **Clone the Repository**:
+   - Clone the main repository to your local machine using the `git clone` command:
+     ```bash
      git clone https://github.com/YoussefLahbari/MyArtisan.git
      ```
 
-3. **Create a Feature Branch**:
-   - Create a new feature branch based on the main branch using the naming convention described above:
+3. **Add Remote Origin**:
+   - Once you've been granted access to the repository, set the remote origin URL to your forked repository:
+     ```bash
+     git remote add origin https://github.com/YoussefLahbari/MyArtisan.git
      ```
+
+4. **Create a Feature Branch**:
+   - Create a new feature branch based on the main branch using the naming convention described above:
+     ```bash
      git checkout -b lastname.key-description-word
      ```
 
-4. **Work on Your Feature**:
+5. **Set Up Environment Variables**:
+   - Rename the `.env.example` file to `.env` and configure the database connection settings in the `.env` file according to your local environment.
+
+6. **Work on Your Feature**:
    - Implement your feature or task in the feature branch, making regular commits as you progress:
-     ```
+     ```bash
      git add .
      git commit -m "Your descriptive commit message"
      git push origin lastname.key-description-word
      ```
 
-5. **Submit a Pull Request**:
+7. **Submit a Pull Request**:
    - Once your feature is ready, submit a pull request from your feature branch to the main branch of the original repository:
-     - Navigate to your forked repository on GitHub and click on the "New pull request" button.
+     - Navigate to the main repository on GitHub and click on the "New pull request" button.
      - Select the main branch of the original repository as the base branch and your feature branch as the compare branch.
      - Provide a clear title and description for your pull request, explaining the changes you've made.
      - Click on the "Create pull request" button to submit your pull request.
 
-6. **Review and Merge**:
+8. **Review and Merge**:
    - Participate in the code review process by reviewing pull requests from other team members and addressing feedback on your own pull requests.
    - After approval, your pull request will be merged into the main branch, and your changes will become part of the project.
 
+If you have any questions or need assistance during the contribution process, don't hesitate to reach out to the project manager or other team members for support.
 
 ## Usage
 
