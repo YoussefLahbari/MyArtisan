@@ -14,7 +14,7 @@ In Morocco, artisans often work independently, relying on word-of-mouth referral
 - **Admin Dashboard:** Administrators have access to an admin dashboard for managing user accounts, monitoring activity, and generating insights through analytics.
 
 ## DataBase
-This is a initial version that you must elaborate based on you needs:
+This is an initial version that you must elaborate based on you needs:
 
 ![Capture d’écran 2024-05-12 204055](https://github.com/YoussefLahbari/MyArtisan/assets/118392925/22a66777-4049-4621-90de-f35b60f79e31)
 
