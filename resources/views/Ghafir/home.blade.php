@@ -14,10 +14,21 @@
 
 <body>
     <header class="header">
-        <div class="container">
-
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="{{route('home')}}" class="logo">Artisan</a>
+            <ul class="d-flex align-items-center list-unstyled gap-5 p-0 m-0">
+                <li><a href="">Services</a></li>
+                <li><a href="">Sign up / Log in</a></li>
+                <li><a href="" class="btn btn-outline-success">Become a tasker</a></li>
+            </ul>
         </div>
     </header>
+    <section class="discover position-relative">
+        <div class="container">
+            <img src="{{asset('images/shape_1.svg')}}" alt="shape" class="shape_1">
+            <img src="{{asset('images/shape_2.svg')}}" alt="shape" class="shape_2">
+        </div>
+    </section>
 </body>
 
 </html>

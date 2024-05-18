@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // Ghafir Routes
 Route::get('/',function() {
     return view('Ghafir.home');
-});
+})->name('home');
 
 // Kablaoui Routes
 

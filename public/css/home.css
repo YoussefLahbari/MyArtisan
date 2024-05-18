@@ -1,3 +1,40 @@
-body {
-    background-color: red;
+* {
+    font-family: "Poppins", sans-serif;
 }
+/* Some Globale Styles */
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* Start Header */
+.header {
+    border: 1px solid #dce0e6;
+    height: 70px;
+}
+.header .container {
+    height: 100%;
+}
+.header .logo {
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.header ul li a {
+    color: #333;
+    font-weight: 600;
+}
+.header ul li:last-of-type a {
+    border-color: #0D7A5F;
+    color: #0D7A5F;
+    transition: .3s ease-in-out;
+    padding-left: 1.4rem ;
+    padding-right: 1.4rem ;
+}
+.header ul li:last-of-type a:hover {
+    background-color: #0D7A5F;
+    color: #fff;
+}
+/* End Header */
