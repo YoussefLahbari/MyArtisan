@@ -2,15 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Lahbari Routes 
 
 
 // Ghafir Routes
-
+Route::get('/',function() {
+    return view('ghafir.blade.php');
+});
 
 // Kablaoui Routes
 
