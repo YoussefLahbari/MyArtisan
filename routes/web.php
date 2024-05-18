@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 // Ghafir Routes
 Route::get('/',function() {
-    return view('ghafir.blade.php');
+    return view('Ghafir.home');
 });
 
 // Kablaoui Routes
