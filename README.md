@@ -33,7 +33,7 @@ To contribute to MyArtisan, follow these steps:
      ```
      
 2-1 **Install Dependencies**: 
-   - Since Vendor file isn't ploaded, you will need to run a command to re-install the composer dependencies:  <br>
+   - Since Vendor folder isn't uploaded, you will need to run a command to re-install the composer dependencies:  <br>
     ```
     composer install
     ``` 
