@@ -31,7 +31,14 @@ To contribute to MyArtisan, follow these steps:
      ```bash
      git clone https://github.com/YoussefLahbari/MyArtisan.git
      ```
-
+     
+2-1 **Install Dependencies**: 
+   - Since Vendor file isn't ploaded, you will need to run a command to re-install the composer dependencies:  <br>
+    ```
+    composer install
+    ``` 
+    <br>
+    
 3. **Add Remote Origin**:
    - Once you've been granted access to the repository, set the remote origin URL to your forked repository:
      ```bash
