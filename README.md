@@ -32,12 +32,35 @@ To contribute to MyArtisan, follow these steps:
      git clone https://github.com/YoussefLahbari/MyArtisan.git
      ```
      
-2-1 **Install Dependencies**: 
-   - Since Vendor folder isn't uploaded, you will need to run a command to re-install the composer dependencies:  <br>
-    ```
+2. **Install Composer dependencies**
+
+    ```bash
     composer install
-    ``` 
-    <br>
+    ```
+
+2.1. **Install NPM dependencies**
+
+    ```bash
+    npm install
+    ```
+
+2.2. **Generate application key**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+2.3. **Run database migrations**
+
+    ```bash
+    php artisan migrate
+    ```
+
+2.4. **Serve the application**
+
+    ```bash
+    php artisan serve
+    ```
     
 3. **Add Remote Origin**:
    - Once you've been granted access to the repository, set the remote origin URL to your forked repository:
