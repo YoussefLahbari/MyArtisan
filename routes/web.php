@@ -7,7 +7,13 @@ Route::get('/', function () {
 });
 
 // Lahbari Routes 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Middleware pour artisan
+Route::get('dashboard', function(){
+    return view('Kablaoui.example');
+})->middleware('auth', 'artisan');
 
 // Ghafir Routes
 
@@ -19,4 +25,7 @@ Route::get('/', function () {
 
 
 // Moukhtari Routes
+
+
+
 
