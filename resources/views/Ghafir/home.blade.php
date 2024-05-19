@@ -27,10 +27,11 @@
     <div class="page-main">
         <header class="header">
             <div class="container d-flex justify-content-between align-items-center">
-                <a href="{{route('home')}}" class="logo">Artisan</a>
+                <a href="{{route('home')}}" class="logo">MyArtisan</a>
                 <ul class="d-flex align-items-center list-unstyled gap-5 p-0 m-0">
                     <li><a href="">Services</a></li>
-                    <li><a href="">Sign up / Log in</a></li>
+                    <li><a href="{{ route('register') }}">Sign up</a></li>
+                    <li><a href="{{ route('login') }}">Log in</a></li>
                     <li><a href="" class="btn btn-outline-success">Become a tasker</a></li>
                 </ul>
             </div>
