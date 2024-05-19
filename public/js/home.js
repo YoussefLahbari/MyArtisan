@@ -1,3 +1,44 @@
+const tl_ = gsap.timeline({ paused: true });
+tl_.to(".panels .panel:first-child, .panels .panel:last-child", {
+    scaleY: 1,
+    duration: 1,
+})
+    .to(
+        ".panels .panel:not(:first-child):not(:last-child)",
+        { scaleY: 1 },
+        "-=0.5"
+    )
+    .to(".panels .panel", {
+        scaleY: 0,
+        duration: 0.3,
+        stagger: 0.05,
+    })
+    .to(".panels", {
+        clipPath: "circle(0%)",
+        skewX: 0,
+        duration: 0.5,
+    })
+    .to(
+        ".page-main",
+        {
+            clipPath: "circle(100%)",
+            duration: 1,
+        },
+        "-=0.3"
+    )
+    .from(
+        ".discover .container .inf h1",
+        { x: -30, opacity: 0, ease: "back" },
+        "<+=.5"
+    )
+    .from(
+        ".discover .container .inf .inp",
+        { x: -30, opacity: 0, ease: "back" },
+        "<+=.3"
+    );
+window.addEventListener("DOMContentLoaded", function () {
+    tl_.play();
+});
 // Function of search
 const services = [
     "General Furniture Assembly",
@@ -181,6 +222,12 @@ const servicesByCategory = [
 ];
 let categories_list = document.querySelectorAll(".categories li");
 let inf_categories = document.querySelector(".container_info_categories");
+gsap.timeline({
+    scrollTrigger: {
+        trigger: inf_categories,
+        start: "top center",
+    },
+}).fromTo(inf_categories, { opacity: 0, x: -40 }, { opacity: 1, x: 0 });
 function handleChangeCategory(index) {
     categories_list.forEach((el) => el.classList.remove("active"));
     categories_list[index].classList.add("active");
@@ -219,8 +266,62 @@ handleChangeCategory(0);
 categories_list.forEach((el, i) =>
     el.addEventListener("click", (_) => handleChangeCategory(i))
 );
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".popular_project",
+        start: "top center",
+    },
+})
+    .fromTo(
+        ".popular_project .container > h3",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0 }
+    )
+    .from(".popular_project .container_boxs .box", {
+        opacity: 0,
+        x: -40,
+        stagger: 0.2,
+    });
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".client_reviews",
+        start: "top center",
+    },
+}).fromTo(".client_reviews", { opacity: 0, x: -40 }, { opacity: 1, x: 0 });
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".footer",
+        // start: "top top",
+        // markers: true,
+    },
+}).from(".footer", {
+    opacity: 0,
+    x: -40,
+    transformOrigin: "center center",
+    ease: "back",
+});
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".how_it_work",
+        start: "top center",
+    },
+})
+    .fromTo(
+        ".how_it_work .container .box_inf",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0 },
+        "<"
+    )
+    .fromTo(
+        ".how_it_work .container img",
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0 },
+        "<+=.3"
+    );
 // Start client review
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     loop: true,
@@ -237,7 +338,7 @@ var swiper = new Swiper(".mySwiper", {
         modifier: 1,
         slideShadows: false,
     },
-    
+
     pagination: {
         el: ".swiper-pagination",
     },
