@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<script src="//code.tidio.co/wjt2bmnz78jcrwmu8hatj7ygvipvnq6d.js" async></script>
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="{{route('home')}}" class="logo">Artisan</a>
@@ -89,6 +90,9 @@
                     <img src="https://images.ctfassets.net/vwt5n1ljn95x/2zLfFEV2MrXbcska0MocE7/32575342bd9f30397d58ccb663c71744/Homepage_Assembly.png?w=828&q=75&fm=webp" alt="">
                 </div>
             </div>
+        </div>
+        <div class="bg position-relative">
+            <img src="{{asset('images/shape_3.svg')}}" alt="" srcset="">
         </div>
     </section>
 </body>

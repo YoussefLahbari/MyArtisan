@@ -52,7 +52,16 @@ a {
     left: 0;
     top: 40px;
 }
-/* End Discover */
+
+.discover .bg {
+    background: linear-gradient(#FFF, 15%, #ECF7EF);
+    height: 150px;
+}
+.discover .bg img {
+    position: absolute;
+    right: 0;
+    top: -60px;
+}
 .discover .inf {
     padding-top: 8rem;
 }
@@ -191,6 +200,7 @@ a {
     gap: 20px;
 }
 .container_info_categories .inf img {
+    pointer-events: none;
     width: 828px;
     height: 435px;
     object-fit: cover;
