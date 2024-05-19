@@ -11,10 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
-<script src="//code.tidio.co/wjt2bmnz78jcrwmu8hatj7ygvipvnq6d.js" async></script>
+    <script src="//code.tidio.co/wjt2bmnz78jcrwmu8hatj7ygvipvnq6d.js" async></script>
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="{{route('home')}}" class="logo">Artisan</a>
@@ -77,7 +78,7 @@
             </ul>
             <div class="container_info_categories">
                 <div class="btns d-flex gap-4">
-                    
+
                 </div>
                 <div class="inf position-relative d-flex align-items-center mx-auto">
                     <div class="box_inf">
@@ -95,8 +96,108 @@
             <img src="{{asset('images/shape_3.svg')}}" alt="" srcset="">
         </div>
     </section>
+    <section class="popular_project">
+        <div class="container">
+            <h3 class="mb-4">Popular Project</h3>
+            <div class="container_boxs">
+                <div class="box">
+                    <img src="{{asset('images/Assembly.webp')}}" alt="">
+                    <h3>Desk assembly</h3>
+                </div>
+                <div class="box">
+                    <img src="{{asset('images/Mounting.jpg')}}" alt="">
+                    <h3>Tv Mounting</h3>
+                </div>
+                <div class="box">
+                    <img src="{{asset('images/Moving.webp')}}" alt="">
+                    <h3>Moving</h3>
+                </div>
+                <div class="box">
+                    <img src="{{asset('images/Cleaning.avif')}}" alt="">
+                    <h3>Apartement Cleaning</h3>
+                </div>
+                <div class="box">
+                    <img src="{{asset('images/Outdoor.webp')}}" alt="">
+
+                    <h3>Gardening & Weeding</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="client_reviews">
+        <div class="container">
+            <h3 class="text-center mb-5">See what happy customers are saying about Artisan
+            </h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="box_review">
+                            <i class="fa-solid fa-quote-right"></i>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fugiat error, qui saepe dolor ex nostrum rerum natus accusamus at iste molestias sint numquam aut? Sint nam quam eos.
+                            </p>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{asset('images/user.png')}}" alt="" srcset="">
+                                <h4 class="mb-0">Youssef Ghafir</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="box_review">
+                            <i class="fa-solid fa-quote-right"></i>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fugiat error, qui saepe dolor ex nostrum rerum natus accusamus at iste molestias sint numquam aut? Sint nam quam eos.
+                            </p>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{asset('images/user.png')}}" alt="" srcset="">
+                                <h4 class="mb-0">Youssef Ghafir</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="box_review">
+                            <i class="fa-solid fa-quote-right"></i>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fugiat error, qui saepe dolor ex nostrum rerum natus accusamus at iste molestias sint numquam aut? Sint nam quam eos.
+                            </p>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{asset('images/user.png')}}" alt="" srcset="">
+                                <h4 class="mb-0">Youssef Ghafir</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="box_review">
+                            <i class="fa-solid fa-quote-right"></i>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fugiat error, qui saepe dolor ex nostrum rerum natus accusamus at iste molestias sint numquam aut? Sint nam quam eos.
+                            </p>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{asset('images/user.png')}}" alt="" srcset="">
+                                <h4 class="mb-0">Youssef Ghafir</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="box_review">
+                            <i class="fa-solid fa-quote-right"></i>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur fugiat error, qui saepe dolor ex nostrum rerum natus accusamus at iste molestias sint numquam aut? Sint nam quam eos.
+                            </p>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="{{asset('images/user.png')}}" alt="" srcset="">
+                                <h4 class="mb-0">Youssef Ghafir</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{asset('js/home.js')}}"></script>
 
 </html>

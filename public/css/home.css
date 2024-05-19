@@ -54,7 +54,7 @@ a {
 }
 
 .discover .bg {
-    background: linear-gradient(#FFF, 15%, #ECF7EF);
+    background: linear-gradient(#fff, 15%, #ecf7ef);
     height: 150px;
 }
 .discover .bg img {
@@ -140,7 +140,7 @@ a {
     justify-content: center;
 }
 .discover .categories li span {
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 .discover .categories li:hover i {
     background-color: #eee;
@@ -152,7 +152,6 @@ a {
 .discover .categories li.active i {
     background-color: #066599;
     color: #fff;
-
 }
 /* Start container_info_categories */
 .container_info_categories .btns {
@@ -206,4 +205,56 @@ a {
     object-fit: cover;
     border-radius: 10px;
     max-width: 100%;
+}
+/* Start popular_project */
+.popular_project {
+    padding: 4rem 0;
+}
+.popular_project .container_boxs {
+    display: grid;
+    margin-top: 2rem;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.popular_project .box {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.popular_project .container_boxs .box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+.popular_project .container_boxs .box h3 {
+    padding: 1rem;
+    font-size: 15px;
+    text-align: center;
+}
+/* Start Client Review */
+.client_reviews {
+    padding: 2rem 0;
+}
+.swiper {
+    width: 100%;    
+    padding: 2rem 0;
+}
+.box_review {
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid #0d7a5f;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.box_review i {
+    position: absolute;
+    right: 20px;
+    font-size: 60px;
+    color: rgba(149, 157, 165, 0.2);
+}
+.box_review p {
+    margin-top: 4rem;
+    line-height: 1.7;
 }

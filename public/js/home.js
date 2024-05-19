@@ -201,11 +201,44 @@ function handleChangeCategory(index) {
     }
     let animate = gsap
         .timeline({ paused: true })
-        .fromTo(inf_categories.children[0], {opacity : 0, x : -40},{opacity : 1, x : 0})
-        .fromTo(inf_categories.children[1].children[0], {opacity : 0, x : -40},{opacity : 1, x : 0},"<").fromTo(image,{opacity : 0, x : -40},{opacity : 1, x : 0},'<+=.3');
+        .fromTo(
+            inf_categories.children[0],
+            { opacity: 0, x: -40 },
+            { opacity: 1, x: 0 }
+        )
+        .fromTo(
+            inf_categories.children[1].children[0],
+            { opacity: 0, x: -40 },
+            { opacity: 1, x: 0 },
+            "<"
+        )
+        .fromTo(image, { opacity: 0, x: -40 }, { opacity: 1, x: 0 }, "<+=.3");
     animate.play();
 }
 handleChangeCategory(0);
 categories_list.forEach((el, i) =>
     el.addEventListener("click", (_) => handleChangeCategory(i))
 );
+// Start client review
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 1000,
+    },
+    centeredSlides: true,
+    slidesPerView: "2",
+    coverflowEffect: {
+        rotate: 20,
+        stretch: 80,
+        depth: 200,
+        modifier: 1,
+        slideShadows: false,
+    },
+    
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
