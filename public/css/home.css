@@ -6,6 +6,7 @@ ul {
     list-style: none;
 }
 a {
+    font-size: 15px;
     text-decoration: none;
 }
 /* Start Header */
@@ -27,14 +28,172 @@ a {
     font-weight: 600;
 }
 .header ul li:last-of-type a {
-    border-color: #0D7A5F;
-    color: #0D7A5F;
-    transition: .3s ease-in-out;
-    padding-left: 1.4rem ;
-    padding-right: 1.4rem ;
+    border-color: #0d7a5f;
+    color: #0d7a5f;
+    transition: 0.3s ease-in-out;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
 }
 .header ul li:last-of-type a:hover {
-    background-color: #0D7A5F;
+    background-color: #0d7a5f;
     color: #fff;
 }
 /* End Header */
+/* Start Discover */
+.shape_1 {
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.shape_2 {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+/* End Discover */
+.discover .inf {
+    padding-top: 8rem;
+}
+.discover .inf h1 {
+    font-size: 4rem;
+    color: #2b4c32;
+    font-weight: 600;
+    line-height: 1.6;
+}
+.discover .inf button {
+    padding: 1.4rem 2.4rem;
+    border-radius: 50px;
+    border: transparent;
+    background-color: #0d7a5f;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    transition: 0.3s ease-in-out;
+}
+.discover .inf button:hover {
+    background-color: #074b3a;
+}
+.discover .inf button i {
+    color: #fff;
+}
+.discover .inf input {
+    width: 100%;
+    padding: 1.4rem;
+    border-radius: 50px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    outline: transparent;
+    border: 2px solid #0d7a5f;
+    max-width: 650px;
+}
+.discover .inf .list {
+    position: absolute;
+    min-height: 350px;
+    visibility: hidden;
+    overflow: hidden;
+    top: calc(100% + 15px);
+    max-width: 100%;
+    border: 2px solid #0d7a5f;
+    width: 750px;
+    border-radius: 5px;
+    z-index: 9;
+    background-color: #fff;
+}
+.discover .inf .list li {
+    width: 100%;
+    padding: 1rem 1.3rem;
+    transition: 0.3s ease-in-out;
+    text-align: left;
+}
+.discover .inf .list li:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+.discover .categories {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dce0e6;
+    margin-top: 4rem !important;
+}
+.discover .categories li {
+    cursor: pointer;
+    color: #545756;
+    font-size: 1.3rem;
+}
+.discover .categories li i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 50%;
+    justify-content: center;
+}
+.discover .categories li span {
+    font-size: .8rem;
+}
+.discover .categories li:hover i {
+    background-color: #eee;
+}
+.discover .categories li.active span {
+    color: #066599;
+    font-weight: 600;
+}
+.discover .categories li.active i {
+    background-color: #066599;
+    color: #fff;
+
+}
+/* Start container_info_categories */
+.container_info_categories .btns {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+.container_info_categories .btns button {
+    padding-left: 2rem;
+    font-size: 15px;
+    padding-right: 2rem;
+    border-radius: 50px;
+}
+.container_info_categories .btns button:hover {
+    background-color: rgb(13 122 95 / 10%);
+    color: #333;
+    border-color: #0d7a5f;
+}
+.container_info_categories .inf {
+    width: 80%;
+    margin-top: 2rem;
+    justify-content: end;
+    border-radius: 20px;
+    background-color: rgba(186, 231, 255, 0.5);
+    padding: 2rem 1rem;
+}
+.container_info_categories .inf .box_inf {
+    background-color: #fff;
+    z-index: 8;
+    position: absolute;
+    width: 380px;
+    max-width: 100%;
+    text-align: left;
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    left: 40px;
+}
+.container_info_categories .inf .box_inf h3 {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+.container_info_categories .inf .box_inf p {
+    display: flex;
+    font-size: 15px;
+    gap: 20px;
+}
+.container_info_categories .inf img {
+    width: 828px;
+    height: 435px;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;
+}
