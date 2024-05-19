@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Lahbari Routes 
 Auth::routes();
 
@@ -16,7 +12,9 @@ Route::get('dashboard', function(){
 })->middleware('auth', 'artisan');
 
 // Ghafir Routes
-
+Route::get('/',function() {
+    return view('Ghafir.home');
+})->name('home');
 
 // Kablaoui Routes
 
