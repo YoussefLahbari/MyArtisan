@@ -242,7 +242,7 @@ function handleChangeCategory(index) {
     let descriptions = servicesByCategory[index].description;
     par.innerHTML = "";
     let image = inf_categories.children[1].children[1];
-    image.src = `${window.location.href}images/${servicesByCategory[index].image}`;
+    image.src = `${window.location.origin}/images/${servicesByCategory[index].image}`;
     for (let i = 0; i < descriptions.length; i++) {
         par.innerHTML += ` <p><i class="fa-solid fa-check"></i>${descriptions[i]}</p>`;
     }
