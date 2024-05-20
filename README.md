@@ -47,35 +47,18 @@ To contribute to MyArtisan, follow these steps:
 5. **Set Up Environment Variables**:
    - Rename the `.env.example` file to `.env` and configure the database connection settings in the `.env` file according to your local environment.
    - 
-6. **Install Composer dependencies**
+5.1. **Install Composer dependencies:** ```composer install```
+
+5.2. **Install NPM dependencies:** ```npm install ```
    
-    ```
-   composer install
-    ```
+5.3. **Generate application key:** ```php artisan key:generate ```
 
-6.1. **Install NPM dependencies**
+5.4. **Run database migrations:** ```php artisan migrate```
 
-    ```
-    npm install
-    ```
-    
-6.2. **Generate application key**
-    ```bash
-    php artisan key:generate
-    ```
+5.5. **Serve the application** ```php artisan serve```
 
-6.3. **Run database migrations**
 
-    ```bash
-    php artisan migrate
-    ```
-
-6.4. **Serve the application**
-
-    ```bash
-    php artisan serve
-    ```
-7. **Work on Your Feature**:
+6. **Work on Your Feature**:
    - Implement your feature or task in the feature branch, making regular commits as you progress:
      ```bash
      git add .
@@ -83,14 +66,14 @@ To contribute to MyArtisan, follow these steps:
      git push origin lastname.key-description-word
      ```
 
-8. **Submit a Pull Request**:
+7. **Submit a Pull Request**:
    - Once your feature is ready, submit a pull request from your feature branch to the main branch of the original repository:
      - Navigate to the main repository on GitHub and click on the "New pull request" button.
      - Select the main branch of the original repository as the base branch and your feature branch as the compare branch.
      - Provide a clear title and description for your pull request, explaining the changes you've made.
      - Click on the "Create pull request" button to submit your pull request.
 
-9. **Review and Merge**:
+8. **Review and Merge**:
    - Participate in the code review process by reviewing pull requests from other team members and addressing feedback on your own pull requests.
    - After approval, your pull request will be merged into the main branch, and your changes will become part of the project.
 
