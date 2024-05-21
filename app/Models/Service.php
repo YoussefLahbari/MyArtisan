@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
+    public function Categorie()
+    {
+        return $this->belongsto(Categorie::class, 'Categorie_ID', 'CategorieID');
+    }
+    public function Location()
+    {
+        return $this->belongsto(Location::class, 'Location_ID', 'LocationID');
+    }
+    public function Artisan()
+    {
+        return $this->Belongsto(Service::class, 'Artisan_ID', 'ArtisanID');
+    }
 }

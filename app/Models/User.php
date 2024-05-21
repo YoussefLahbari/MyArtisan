@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function Artisan()
+    {
+        return $this->belongsTo(Artisan::class, 'Userid', 'id');
+    }
 }
