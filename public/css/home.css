@@ -106,8 +106,8 @@ a {
     border: 2px solid #0d7a5f;
     width: 750px;
     border-radius: 5px;
-    z-index: 9;
-    background-color: #fff;
+    background-color:#fff;
+    z-index: 99;
 }
 .discover .inf .list li {
     width: 100%;
@@ -154,6 +154,10 @@ a {
     color: #fff;
 }
 /* Start container_info_categories */
+.container_info_categories {
+    position: relative !important;
+    z-index: -1 !important;
+}
 .container_info_categories .btns {
     flex-wrap: wrap;
     width: 80%;

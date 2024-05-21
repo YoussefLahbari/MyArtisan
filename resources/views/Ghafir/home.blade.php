@@ -32,7 +32,7 @@
                     <li><a href="">Services</a></li>
                     <li><a href="{{ route('register') }}">Sign up</a></li>
                     <li><a href="{{ route('login') }}">Log in</a></li>
-                    <li><a href="" class="btn btn-outline-success">Become a tasker</a></li>
+                    <li><a href="" class="btn btn-outline-success">Become a Artisan</a></li>
                 </ul>
             </div>
         </header>
@@ -230,7 +230,7 @@
                     <li><i class="fa-brands fa-x-twitter"></i></li>
                     <li><i class="fa-brands fa-instagram"></i></li>
                 </ul>
-                <p class="mt-5">All right reserved to Artisan 2024</p>
+                <p class="mt-5">All right reserved to Artisan &copy;  2024</p>
             </div>
         </footer>
     </div>
