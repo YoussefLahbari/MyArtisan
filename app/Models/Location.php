@@ -10,6 +10,6 @@ class Location extends Model
     use HasFactory;
     public function Service()
     {
-        return $this->belongsto(Service::class, 'Location_ID', 'LocationID');
+        return $this->belongsto(Service::class);
     }
 }

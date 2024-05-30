@@ -15,9 +15,6 @@ class ArtisanMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->usertype==='Client'){
-            dd(auth()->user()->usertype==='Client');
-        }
         return $next($request);
     }
 }

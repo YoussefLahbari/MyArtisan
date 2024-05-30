@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id('CategorieID');
-            $table->string('Name');
-            $table->string('Description');
+        Schema::create('previous_works', function (Blueprint $table) {
+            $table->id();
+            $table->string('image_url'); // URL of the previous work image
             $table->timestamps();
+            $table->foreignId('artisan_id')->constrained();
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('previous_works');
     }
 };

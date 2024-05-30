@@ -8,27 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 class Artisan extends Model
 {
     use HasFactory;
-    protected $table = 'Users';
-
 
     protected $fillable = [
-        'UserID',
-        'UserName',
-        'Email',
-        'Password',
-        'UserType',
-        'created_at',
-        'updated_at',
+        'Skills',
+        'Experience',
+        'Description', 
+        'ProfileImg', 
+        'Rating', 
+        'user_id'
     ];
 
     public function User()
     {
-        return $this->belongsTo(User::class, 'UserID', 'id');
+        return $this->belongsTo(User::class);
     }
     public function Service()
     {
-        return $this->HasMany(Service::class, 'Artisan_ID', 'ArtisanID');
+        return $this->HasMany(Service::class);
     }
 
+    public function previousWorks()
+    {
+        return $this->hasMany(PreviousWork::class);
+    }
 
 }

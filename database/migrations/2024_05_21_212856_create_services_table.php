@@ -12,17 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('services', function (Blueprint $table) {
-            $table->id('ServiceID');
-            $table->string('Tittle');
+            $table->id();
+            $table->string('Title');
             $table->string('Description');
             $table->string('Price');
-            $table->unsignedBigInteger('Categorie_ID');
-            $table->unsignedBigInteger('Location_ID');
-            $table->unsignedBigInteger('Artisan_ID');
             $table->timestamps();
-            $table->foreign('Categorie_ID')->references('CategorieID')->on('Categories');
-            $table->foreign('Location_ID')->references('LocationID')->on('Locations');
-            $table->foreign('Artisan_ID')->references('ArtisanID')->on('Artisans');
+            $table->foreignId('categorie_id')->constrained();
+            $table->foreignId('location_id')->constrained();
+            $table->foreignId('artisan_id')->constrained();
             
         });
     }
