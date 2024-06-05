@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\admin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Lahbari Routes 
@@ -15,6 +17,11 @@ Route::get('dashboard', function(){
 Route::get('/',function() {
     return view('Ghafir.home');
 })->name('home');
+Route::middleware(admin::class)->prefix('admin')->group(function() {
+    Route::get('/',function() {
+        return view('admin.index');
+    });
+});
 
 // Kablaoui Routes
 
