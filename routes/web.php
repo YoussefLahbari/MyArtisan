@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Middleware\admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +19,7 @@ Route::get('/',function() {
     return view('Ghafir.home');
 })->name('home');
 Route::middleware(admin::class)->prefix('admin')->group(function() {
-    Route::get('/',function() {
-        return view('admin.index');
-    });
+    Route::get('/',[adminController::class,'index'])->name('overview');
 });
 
 // Kablaoui Routes
