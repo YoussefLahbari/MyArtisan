@@ -28,39 +28,9 @@ To contribute to MyArtisan, follow these steps:
 
 2. **Clone the Repository**:
    - Clone the main repository to your local machine using the `git clone` command:
-     ```bash
+     ```
      git clone https://github.com/YoussefLahbari/MyArtisan.git
      ```
-     
-2. **Install Composer dependencies**
-
-    ```bash
-    composer install
-    ```
-
-2.1. **Install NPM dependencies**
-
-    ```bash
-    npm install
-    ```
-
-2.2. **Generate application key**
-
-    ```bash
-    php artisan key:generate
-    ```
-
-2.3. **Run database migrations**
-
-    ```bash
-    php artisan migrate
-    ```
-
-2.4. **Serve the application**
-
-    ```bash
-    php artisan serve
-    ```
     
 3. **Add Remote Origin**:
    - Once you've been granted access to the repository, set the remote origin URL to your forked repository:
@@ -76,6 +46,17 @@ To contribute to MyArtisan, follow these steps:
 
 5. **Set Up Environment Variables**:
    - Rename the `.env.example` file to `.env` and configure the database connection settings in the `.env` file according to your local environment.
+   - 
+5.1. **Install Composer dependencies:** ```composer install```
+
+5.2. **Install NPM dependencies:** ```npm install ```
+   
+5.3. **Generate application key:** ```php artisan key:generate ```
+
+5.4. **Run database migrations:** ```php artisan migrate```
+
+5.5. **Serve the application** ```php artisan serve```
+
 
 6. **Work on Your Feature**:
    - Implement your feature or task in the feature branch, making regular commits as you progress:

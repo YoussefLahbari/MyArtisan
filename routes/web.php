@@ -5,16 +5,14 @@ use App\Http\Controllers\adminclient;
 use App\Http\Controllers\adminController;
 use App\Http\Middleware\admin;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ArtisanController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // Lahbari Routes 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Middleware pour artisan
-Route::get('dashboard', function(){
-    return view('Kablaoui.example');
-})->middleware('auth', 'artisan');
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth', 'artisan')->name('home');
+Route::get('/artisan', [ArtisanController::class, 'index'])->name('artisan.index')->middleware('auth');
 
 // Ghafir Routes
 Route::get('/',function() {
@@ -27,6 +25,7 @@ Route::middleware(admin::class)->prefix('admin')->group(function() {
         'client' => adminclient::class
     ]);
 });
+})->name('landingpage');
 
 // Kablaoui Routes
 
