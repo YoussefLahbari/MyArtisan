@@ -27,12 +27,21 @@
     <div class="page-main">
         <header class="header">
             <div class="container d-flex justify-content-between align-items-center">
-                <a href="{{route('home')}}" class="logo">MyArtisan</a>
-                <ul class="d-flex align-items-center list-unstyled gap-5 p-0 m-0">
-                    <li><a href="">Services</a></li>
+                <a href="{{route('page_home')}}" class="logo">MyArtisan</a>
+                <ul class="d-flex align-items-center list-unstyled gap-4 p-0 m-0">
+                    @guest
+                    <li><a href="#services">Services</a></li>
                     <li><a href="{{ route('register') }}">Sign up</a></li>
                     <li><a href="{{ route('login') }}">Log in</a></li>
-                    <li><a href="" class="btn btn-outline-success">Become a Artisan</a></li>
+                    <li><a href="{{route('register')}}" class="btn btn-outline-success">Become a Artisan</a></li>
+                    @endguest
+                    @auth
+                    <li><a href="{{route('home')}}" class="btn btn-outline-success"><i class="fa-solid fa-gauge-high"></i> Dahsborad</a></li>
+                    @if($user_type == 'Admin')
+                    <li><a href="{{route('admin.overview')}}" class="btn btn-outline-success"><i class="fa-solid fa-user-tie"></i> Admin Dash</a></li>
+                    @else
+                    @endif
+                    @endauth
                 </ul>
             </div>
         </header>
@@ -86,7 +95,7 @@
                         <span>Trending</span>
                     </li>
                 </ul>
-                <div class="container_info_categories">
+                <div class="container_info_categories" id="services">
                     <div class="btns d-flex gap-4">
 
                     </div>
@@ -230,7 +239,7 @@
                     <li><i class="fa-brands fa-x-twitter"></i></li>
                     <li><i class="fa-brands fa-instagram"></i></li>
                 </ul>
-                <p class="mt-5">All right reserved to Artisan &copy;  2024</p>
+                <p class="mt-5">All right reserved to Artisan &copy; 2024</p>
             </div>
         </footer>
     </div>
