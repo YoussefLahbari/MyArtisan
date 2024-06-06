@@ -16,17 +16,19 @@ Route::get('/artisan', [ArtisanController::class, 'index'])->name('artisan.index
 
 // Ghafir Routes
 Route::get('/',function() {
+    if(Auth::check()) {
+        $user_type = Auth::user()->usertype;
+        return view('Ghafir.home',['user_type'=>$user_type]);
+    }
     return view('Ghafir.home');
-})->name('home');
-Route::middleware(admin::class)->prefix('admin')->group(function() {
+})->name('page_home');
+Route::middleware(admin::class)->prefix('admin')->name('admin.')->group(function() {
     Route::get('/home',[adminController::class,'index'])->name('overview');
     Route::resources([
         'artisan' =>adminArtisan::class,
         'client' => adminclient::class
     ]);
 });
-})->name('landingpage');
-
 // Kablaoui Routes
 
 
