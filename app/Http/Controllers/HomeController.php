@@ -6,6 +6,7 @@ use App\Models\Artisan;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     { 
-        $user = User::find(Auth::user()->id);
+        $user = User::find(FacadesAuth::user()->id);
         if($user->isArtisan()){
             $artisan = Artisan::where('user_id', $user->id)->get();
             if(count($artisan) > 0){
