@@ -139,4 +139,4 @@
         }
     });
 </script>
-@endsection('content')
+@endsection
