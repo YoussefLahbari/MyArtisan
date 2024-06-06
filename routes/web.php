@@ -24,8 +24,7 @@ Route::middleware(admin::class)->prefix('admin')->group(function() {
         'artisan' =>adminArtisan::class,
         'client' => adminclient::class
     ]);
-});
-})->name('landingpage');
+}); 
 
 // Kablaoui Routes
 
