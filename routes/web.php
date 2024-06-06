@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\adminArtisan;
+use App\Http\Controllers\adminclient;
+use App\Http\Controllers\adminController;
+use App\Http\Middleware\admin;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtisanController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +17,14 @@ Route::get('/artisan', [ArtisanController::class, 'index'])->name('artisan.index
 // Ghafir Routes
 Route::get('/',function() {
     return view('Ghafir.home');
+})->name('home');
+Route::middleware(admin::class)->prefix('admin')->group(function() {
+    Route::get('/home',[adminController::class,'index'])->name('overview');
+    Route::resources([
+        'artisan' =>adminArtisan::class,
+        'client' => adminclient::class
+    ]);
+});
 })->name('landingpage');
 
 // Kablaoui Routes
