@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Artisan;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -18,7 +17,6 @@ class adminArtisan extends Controller
     public function index()
     {
         $data = Artisan::all();
-        $user = Auth::user();
         return view('admin.artisan', ['data' => $data]);
     }
 
