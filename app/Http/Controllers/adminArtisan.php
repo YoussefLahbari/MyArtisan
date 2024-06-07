@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artisan;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class adminArtisan extends Controller
 {
@@ -15,7 +19,7 @@ class adminArtisan extends Controller
     {
         $data = Artisan::all();
         $user = Auth::user();
-        return view('admin.artisan',['name' => $user->name,'email' => $user->email,'data' => $data]);
+        return view('admin.artisan', ['data' => $data]);
     }
 
     /**
@@ -23,7 +27,8 @@ class adminArtisan extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admin.artisan_create');
     }
 
     /**
@@ -31,7 +36,31 @@ class adminArtisan extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required|min:3|max:20",
+            "email" => "required|email|unique:users",
+            "password" => "required|min:8|max:20",
+            "skills" => "required|min:3",
+            "experience" => "required|integer",
+            "description" => "required|string",
+            "rating" => "required|numeric|between:0,10|regex:/^\d{1,2}(\.\d{1,2})?$/"
+        ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'usertype' => 'Artisan'
+        ]);
+        $id = User::latest()->first();
+        Artisan::create([
+            'Skills' => $request->skills,
+            'Experience' => $request->experience,
+            'Description' => $request->description,
+            'ProfileImg' => '',
+            'Rating' => $request->rating,
+            'user_id' => $id->id
+        ]);
+        return redirect()->route('admin.artisan.index')->with('msg', 'The Artisan was added successfuly !');
     }
 
     /**
@@ -39,7 +68,8 @@ class adminArtisan extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Artisan::findOrFail($id);
+        return view('admin.artisan_show', ['data' => $data]);
     }
 
     /**
@@ -47,7 +77,8 @@ class adminArtisan extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Artisan::findOrFail($id);
+        return view('admin.artisan_edit', ['data' => $data]);
     }
 
     /**
@@ -55,7 +86,29 @@ class adminArtisan extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $a = Artisan::find($id);
+        $request->validate([
+            "name" => "required|min:3|max:20",
+            "email" => ["required", "email", Rule::unique('users')->ignore($a->user->id)],
+            "password" => "nullable|min:8|max:20",
+            "skills" => "required|min:3",
+            "experience" => "required|integer",
+            "description" => "required|string",
+            "rating" => "required|numeric|between:0,10|regex:/^\d{1,2}(\.\d{1,2})?$/"
+        ]);
+        $pass = $request->password == '' ? $a->user->password : Hash::make($request->password);
+        DB::table('users')->where('id', $a->user->id)->update([
+            'email' => $request->email,
+            'password' => $pass,
+            'name' => $request->name,
+        ]);
+        DB::table('artisans')->where('id', $id)->update([
+            'Skills' => $request->skills,
+            'Experience' => $request->experience,
+            'Description' => $request->description,
+            'Rating' => $request->rating,
+        ]);
+        return redirect()->route('admin.artisan.index')->with('msg', 'The Artisan was Updated successfuly !');
     }
 
     /**
@@ -63,6 +116,9 @@ class adminArtisan extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $id_user = Artisan::find($id)->user->id;
+        Artisan::destroy($id);
+        User::destroy($id_user);
+        return redirect()->route('admin.artisan.index')->with('msg', 'The Artisan was Deleted successfuly !');
     }
 }
