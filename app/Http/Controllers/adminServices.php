@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artisan;
+use App\Models\Categorie;
+use App\Models\Location;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class adminServices extends Controller
 {
     public function index()
     {
-        $data = service::all();
+        $data = Service::all();
         return view('admin.service', ['data' => $data]);
     }
 
@@ -17,8 +21,10 @@ class adminServices extends Controller
      */
     public function create()
     {
-
-        return view('admin.service_create');
+        $categories = Categorie::all();
+        $artisans = Artisan::all();
+        $locations = Location::all();
+        return view('admin.service_create',['categories' => $categories,'artisans' => $artisans,'locations' => $locations]);
     }
 
     /**
