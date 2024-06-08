@@ -36,6 +36,7 @@
                             <button class="btn btn-sm btn-dark actions">Actions <i class="fa-solid fa-chevron-down"></i></button>
                             <div class="options d-flex flex-column p-2 justify-content-end align-items-stretch">
                                 <a class="btn btn-light" href="{{route('admin.service.edit',$item->id)}}">Edit</a>
+                                <a class="btn btn-light" href="{{route('admin.service.show',$item->id)}}">Show</a>
                                 <button class="btn btn-light delete">Delete</button>
                                 <form action="{{route('admin.service.destroy',$item->id)}}" method="post" style="display: none;">
                                     @csrf
