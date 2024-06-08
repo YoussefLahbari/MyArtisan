@@ -13,13 +13,9 @@
             <h5 class="fw-bold">Categorie</h5>
             <p>{{$data->categorie->Name}}</p>
             <h5 class="fw-bold">Location</h5>
-            <p>{{$data->location}}</p>
-            <h5 class="fw-bold">Title</h5>
-            <p>{{$data->Title}}</p>
-            <h5 class="fw-bold">Title</h5>
-            <p>{{$data->Title}}</p>
-
-
+            <p>{{$data->location->Name}}</p>
+            <h5 class="fw-bold">Artisan</h5>
+            <p>{{$data->artisan->Skills}}</p>
         </div>
     </div>
 </div>

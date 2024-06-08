@@ -9,16 +9,16 @@ class Service extends Model
 {
     protected $fillable = ['Title','Description','Price','categorie_id','location_id','artisan_id'];
     use HasFactory;
-    public function Categorie()
+    public function categorie()
     {
         return $this->belongsto(Categorie::class);
     }
-    public function Location()
+    public function location()
     {
-        return $this->belongsto(Location::class);
+        return $this->belongsto(Location::class, 'location_id', 'id');
     }
-    public function Artisan()
+    public function artisan()
     {
-        return $this->Belongsto(Service::class);
+        return $this->Belongsto(Artisan::class, 'artisan_id', 'id');
     }
 }
