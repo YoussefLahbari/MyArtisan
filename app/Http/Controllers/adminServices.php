@@ -7,6 +7,7 @@ use App\Models\Categorie;
 use App\Models\Location;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class adminServices extends Controller
 {
@@ -24,7 +25,7 @@ class adminServices extends Controller
         $categories = Categorie::all();
         $artisans = Artisan::all();
         $locations = Location::all();
-        return view('admin.service_create',['categories' => $categories,'artisans' => $artisans,'locations' => $locations]);
+        return view('admin.service_create', ['categories' => $categories, 'artisans' => $artisans, 'locations' => $locations]);
     }
 
     /**
@@ -50,7 +51,7 @@ class adminServices extends Controller
     public function show(string $id)
     {
         $data = Service::findOrFail($id);
-        return view('admin.service_show',['data' => $data]);
+        return view('admin.service_show', ['data' => $data]);
     }
 
     /**
@@ -58,8 +59,11 @@ class adminServices extends Controller
      */
     public function edit(string $id)
     {
-        $data = service::findOrFail($id);
-        return view('admin.service_edit', ['data' => $data]);
+        $categories = Categorie::all();
+        $artisans = Artisan::all();
+        $locations = Location::all();
+        $data = Service::findOrFail($id);
+        return view('admin.service_edit', ['data' => $data,'categories' => $categories, 'artisans' => $artisans, 'locations' => $locations]);
     }
 
     /**
@@ -68,9 +72,12 @@ class adminServices extends Controller
     public function update(Request $request, string $id)
     {
         $result = $request->validate([
-            "Name" => "required|min:3|max:20",
-            "Adress" => "required|min:4",
-            "CodePostal" => "required|min:4"
+            "Title" => "required|min:3|max:20",
+            "Description" => "required|min:4",
+            "Price" => "required|numeric",
+            "location_id" => "required|integer",
+            "artisan_id" => "required|integer",
+            "categorie_id" => "required|integer",
         ]);
         DB::table('services')->where('id', $id)->update($result);
         return redirect()->route('admin.service.index')->with('msg', 'The service was Updated successfuly !');

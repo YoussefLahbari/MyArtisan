@@ -11,11 +11,12 @@
             <h5 class="fw-bold">Price</h5>
             <p>{{$data->Price}}</p>
             <h5 class="fw-bold">Categorie</h5>
-            <p>{{$data->categorie->Name}}</p>
+            <p>{{$data->categorie->Name}} <a class="link-underline-primary" href="{{route('admin.categorie.show',$data->categorie->id)}}">see more details</a>
+            </p>
             <h5 class="fw-bold">Location</h5>
-            <p>{{$data->location->Name}}</p>
+            <p>{{$data->location->Name}} <a class="link-underline-primary" href="{{route('admin.location.show',$data->location->id)}}">see more details</a></p>
             <h5 class="fw-bold">Artisan</h5>
-            <p>{{$data->artisan->Skills}}</p>
+            <p>{{$data->artisan->user->name}} <a class="link-underline-primary" href="{{route('admin.artisan.show',$data->artisan->id)}}">see more details</a></p></p>
         </div>
     </div>
 </div>

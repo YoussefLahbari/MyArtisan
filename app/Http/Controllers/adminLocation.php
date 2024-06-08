@@ -42,7 +42,7 @@ class adminLocation extends Controller
      */
     public function show(string $id)
     {
-        return redirect()->route('admin.categorie.index');
+        return redirect()->route('admin.location.index');
     }
 
     /**
