@@ -15,7 +15,7 @@
                     <img src="{{ $artisan->ProfileImg }}" alt="{{ $users[$key]->name }}" class="w-12 h-12 rounded-full" />
                     <div>
                         <h2 class="text-lg font-semibold">{{ $users[$key]->name }}</h2>
-                        <p class="text-sm text-gray-600">{{ $artisan->location }}</p>
+                        <p class="text-sm text-gray-600">{{ $artisan->location  }}</p>
                         <p class="text-sm text-gray-800">{{ $artisan->service }}</p>
                         <div class="flex items-center mt-2">
                             @include('partials.status-badge', ['status' => $artisan->status])
@@ -27,19 +27,19 @@
             @endforeach
         </div>
 
-       <!-- Artisan Details -->
-<div class="w-2/3 p-4 pt-0 h-screen overflow-y-auto" id="artisan-details">
-    <div class="flex justify-center items-center h-full text-center text-gray-500">
-        <div>
-            <h3 class="text-2xl font-semibold mb-4">Select an Artisan</h3>
-            <p class="text-lg">Click on an artisan from the list to view their details.</p>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-300 mx-auto mt-4 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3" />
-            </svg>
-            
+        <!-- Artisan Details -->
+        <div class="w-2/3 p-4 pt-0 h-screen overflow-y-auto" id="artisan-details">
+            <div class="flex justify-center items-center h-full text-center text-gray-500">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Select an Artisan</h3>
+                    <p class="text-lg">Click on an artisan from the list to view their details.</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-300 mx-auto mt-4 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3" />
+                    </svg>
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
     </div>
 </div>
@@ -47,10 +47,26 @@
 <script>
     const artisans = @json($artisans);
     const users = @json($users);
+    // This Function add an default image for profiles if is empty 
+    function addImagesProfile() {
+        let images = document.querySelectorAll('img');
+        if (images.length > 0) images.forEach(el => {
+            if (el.getAttribute('src') == '') el.setAttribute('src', '{{asset("images/profile.jpg")}}')
+        })
+    }
+    addImagesProfile();
+
+    function contact(event) {
+        let email = event.target.getAttribute('data-email');
+        const subject = 'Contact';
+        const body = 'Hello there,';
+        const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(url, '_blank');
+    }
 
     function selectArtisan(artisanId) {
         const artisan = artisans.find(a => a.id === artisanId);
-        const user = users.find(u => u.id === artisan.user_id); // Link artisan to user by user_id
+        const user = users.find(u => u.id === artisan.user_id);
 
         if (!artisan || !user) {
             alert('Artisan not found');
@@ -60,27 +76,25 @@
         //     console.log(artisan)
         // }
 
-    function addToFavorites(artisanId) {
-        // Add the selected artisan to favorites
-        alert('Coming Soon!');
-    }
+        function addToFavorites(artisanId) {
+            // Add the selected artisan to favorites
+            alert('Coming Soon!');
+        }
 
-    function contactArtisan(artisanId) {
-        // Redirect to contact form
-        window.location.href = `/contact/${artisanId}`;
-    }
 
-    const ratingStars = Array.from({ length: 5 }, (_, i) => 
-        i < artisan.Rating 
-        ? `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400 ml-2" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927a1 1 0 011.902 0l1.07 3.286h3.462a1 1 0 01.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.286a1 1 0 01-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034a1 1 0 01-1.538-1.118l1.07-3.286a1 1 0 00-.364-1.118L2.56 8.713a1 1 0 01.588-1.81h3.462l1.07-3.286z"/></svg>`
-        : `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300 ml-2" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927a1 1 0 011.902 0l1.07 3.286h3.462a1 1 0 01.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.286a1 1 0 01-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034a1 1 0 01-1.538-1.118l1.07-3.286a1 1 0 00-.364-1.118L2.56 8.713a1 1 0 01.588-1.81h3.462l1.07-3.286z"/></svg>`
-    ).join('');
+        const ratingStars = Array.from({
+                length: 5
+            }, (_, i) =>
+            i < artisan.Rating ?
+            `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400 ml-2" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927a1 1 0 011.902 0l1.07 3.286h3.462a1 1 0 01.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.286a1 1 0 01-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034a1 1 0 01-1.538-1.118l1.07-3.286a1 1 0 00-.364-1.118L2.56 8.713a1 1 0 01.588-1.81h3.462l1.07-3.286z"/></svg>` :
+            `<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-300 ml-2" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927a1 1 0 011.902 0l1.07 3.286h3.462a1 1 0 01.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.286a1 1 0 01-1.538 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034a1 1 0 01-1.538-1.118l1.07-3.286a1 1 0 00-.364-1.118L2.56 8.713a1 1 0 01.588-1.81h3.462l1.07-3.286z"/></svg>`
+        ).join('');
 
-    const previousWorks = artisan.previous_works && artisan.previous_works.length > 0 
-        ? artisan.previous_works.map((work, index) => `<img key="${index}" src="${work.image_url}" alt="Work ${index + 1}" class="rounded-lg" />`).join('')
-        : '<p class="text-gray-500">No previous works available.</p>';
+        const previousWorks = artisan.previous_works && artisan.previous_works.length > 0 ?
+            artisan.previous_works.map((work, index) => `<img key="${index}" src="${work.image_url}" alt="Work ${index + 1}" class="rounded-lg" />`).join('') :
+            '<p class="text-gray-500">No previous works available.</p>';
 
-    document.getElementById('artisan-details').innerHTML = `
+        document.getElementById('artisan-details').innerHTML = `
         <div class="flex justify-between items-center mb-4 bg-white p-2 border rounded-lg shadow-md">
             <h3 class="text-2xl font-semibold mb-0">Artisan Details</h3>
             <button class="bg-[#005b96] text-white px-3 py-1 rounded hover:bg-blue-600 transition" onclick="addToFavorites(${artisan.id})">
@@ -113,12 +127,11 @@
             <h3 class="text-xl font-semibold mb-2">Client Reviews</h3>
            
             <div class="flex justify-end">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="contactArtisan(${artisan.id})">Contact</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="contact(event)" data-email="${user.email}">Contact</button>
             </div>
         </div>
     `;
-}
+        addImagesProfile();
+    }
 </script>
 @endsection
-
-
