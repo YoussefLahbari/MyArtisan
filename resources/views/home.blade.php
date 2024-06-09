@@ -47,7 +47,15 @@
 <script>
     const artisans = @json($artisans);
     const users = @json($users);
+    function addToFavorites(artisanId) {
+        // Add the selected artisan to favorites
+        alert('Coming Soon!');
+    }
 
+    function contactArtisan(artisanId) {
+        // Redirect to contact form
+        window.location.href = `/chatify/${artisanId}`;
+    }
     function selectArtisan(artisanId) {
         const artisan = artisans.find(a => a.id === artisanId);
         const user = users.find(u => u.id === artisan.user_id); // Link artisan to user by user_id
@@ -60,15 +68,7 @@
         //     console.log(artisan)
         // }
 
-    function addToFavorites(artisanId) {
-        // Add the selected artisan to favorites
-        alert('Coming Soon!');
-    }
-
-    function contactArtisan(artisanId) {
-        // Redirect to contact form
-        window.location.href = `/contact/${artisanId}`;
-    }
+    
 
     const ratingStars = Array.from({ length: 5 }, (_, i) => 
         i < artisan.Rating 
