@@ -2,19 +2,22 @@
 
 @section('content')
 <div class="container_">
-    <h3 class="fs-5">Artisan List</h3>
+    <h3 class="fs-5">Service List</h3>
     <div class="table_container">
         <div class="d-flex justify-content-end">
-            <a class="btn btn-primary btn-sm" href="{{route('admin.artisan.create')}}"><i class="fa-solid fa-plus"></i> Add Artisan</a>
+            <a class="btn btn-primary btn-sm" href="{{route('admin.service.create')}}"><i class="fa-solid fa-plus"></i> Add service</a>
         </div>
         @if(count($data) > 0)
         <table class="table mt-5">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Experience</th>
-                    <th>Rating</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category Id</th>
+                    <th>Location Id</th>
+                    <th>Artisan Id</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -22,17 +25,20 @@
                 @foreach($data as $item)
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td>{{$item->user->name}}</td>
-                    <td>{{$item->Experience}}</td>
-                    <td>{{$item->Rating}}</td>
+                    <td>{{$item->Title}}</td>
+                    <td>{{$item->Description}}</td>
+                    <td>{{$item->Price}}</td>
+                    <td>{{$item->categorie_id}}</td>
+                    <td>{{$item->location_id}}</td>
+                    <td>{{$item->artisan_id}}</td>
                     <td>
                         <div class="position-relative">
                             <button class="btn btn-sm btn-dark actions">Actions <i class="fa-solid fa-chevron-down"></i></button>
                             <div class="options d-flex flex-column p-2 justify-content-end align-items-stretch">
-                                <a class="btn btn-light" href="{{route('admin.artisan.edit',$item->id)}}">Edit</a>
-                                <a class="btn btn-light" href="{{route('admin.artisan.show',$item->id)}}">Show</a>
+                                <a class="btn btn-light" href="{{route('admin.service.edit',$item->id)}}">Edit</a>
+                                <a class="btn btn-light" href="{{route('admin.service.show',$item->id)}}">Show</a>
                                 <button class="btn btn-light delete">Delete</button>
-                                <form action="{{route('admin.artisan.destroy',$item->id)}}" method="post" style="display: none;">
+                                <form action="{{route('admin.service.destroy',$item->id)}}" method="post" style="display: none;">
                                     @csrf
                                     @method('DELETE')
                                 </form>
@@ -44,7 +50,7 @@
             </tbody>
         </table>
         @else
-             <p class="text-center mb-0 mt-5"><i class="fa-solid fa-circle-exclamation"></i> No Data Found in table Artisan !</p>
+        <p class="text-center mb-0 mt-5"><i class="fa-solid fa-circle-exclamation"></i> No Data Found in table service !</p>
         @endif
     </div>
 </div>
@@ -93,7 +99,7 @@
     delete_btns.forEach(el => {
         el.addEventListener('click', _ => {
             Swal.fire({
-                title: "Are you sure u want to delete this Artisan",
+                title: "Are you sure u want to delete this service",
                 icon: 'warning',
                 showCancelButton: 'true',
                 confirmButtonText: 'Delete',

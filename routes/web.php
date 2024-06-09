@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\adminArtisan;
+use App\Http\Controllers\adminCategories;
 use App\Http\Controllers\adminclient;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\adminLocation;
+use App\Http\Controllers\adminServices;
 use App\Http\Middleware\admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtisanController;
@@ -26,7 +29,10 @@ Route::middleware(admin::class)->prefix('admin')->name('admin.')->group(function
     Route::get('/home',[adminController::class,'index'])->name('overview');
     Route::resources([
         'artisan' =>adminArtisan::class,
-        'client' => adminclient::class
+        'client' => adminclient::class,
+        'categorie' => adminCategories::class,
+        'location' => adminLocation::class,
+        'service' => adminServices::class
     ]);
 });
 

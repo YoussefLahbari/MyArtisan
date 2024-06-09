@@ -1,3 +1,64 @@
+/* Styles Of Loader  */
+.loader {
+    width: 64px;
+    height: 44px;
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 8px;
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    border: 5px solid #fff;
+    width: 32px;
+    height: 28px;
+    border-radius: 50% 50% 0 0;
+    left: 50%;
+    top: 0;
+    transform: translate(-50% , -100%)
+  
+  }
+  .loader::after {
+    content: '';
+    position: absolute;
+    transform: translate(-50% , -50%);
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 16px 0 #fff, -16px 0 #fff;
+    animation: flash 0.5s ease-out infinite alternate;
+  }
+  
+  @keyframes flash {
+    0% {
+      background-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 1);
+    }
+    50% {
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 0.25);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 16px 0 rgba(255, 255, 255, 1), -16px 0 rgba(255, 255, 255, 0.25);
+    }
+  }
+.bg_loader__ {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202b46;
+    z-index: 99;
+}
+/* Styles Of Loader  */
 * {
     font-family: "Poppins";
 }
@@ -6,6 +67,9 @@
 }
 :root {
     --width: 250px;
+}
+body {
+    background-color: #f8f8f8;
 }
 .navbar_dash {
     position: fixed;
@@ -24,7 +88,6 @@
 }
 .navbar_dash ul {
     margin-top: 2rem;
-    /* padding: 0 3rem; */
     list-style: none;
 }
 
@@ -49,8 +112,8 @@
     position: absolute;
     width: calc(100% - var(--width));
     left: var(--width);
+    min-height: 100vh;
     top: 0;
-    background-color: #f8f8f8;
 }
 .content_container .top {
     background-color: #fff;
@@ -122,6 +185,7 @@
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
 .options {
+    z-index: 9;
     visibility: hidden;
     opacity: 0;
     position: absolute;
@@ -134,7 +198,25 @@
     gap: 10px;
     border-radius: 10px;
 }
-.options button {
+.options button,
+.options a{
     font-size: 15px;
     text-align: left;
+}
+.title_create {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+.details_artisan {
+    width: 550px;
+    max-width: 100%;
+    margin: 1.3rem 0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.details_artisan .inf {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
 }

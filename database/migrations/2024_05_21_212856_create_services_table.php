@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('Description');
             $table->string('Price');
             $table->timestamps();
-            $table->foreignId('categorie_id')->constrained();
-            $table->foreignId('location_id')->constrained();
-            $table->foreignId('artisan_id')->constrained();
+            $table->foreignId('categorie_id')->constrained()->onDelete('cascade');
+            $table->foreignId('location_id')->constrained()->onDelete('cascade');
+            $table->foreignId('artisan_id')->constrained()->onDelete('cascade');
             
         });
     }
