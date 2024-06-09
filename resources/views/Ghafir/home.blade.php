@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -27,7 +30,9 @@
     <div class="page-main">
         <header class="header">
             <div class="container d-flex justify-content-between align-items-center">
-                <a href="{{route('page_home')}}" class="logo">MyArtisan</a>
+                <a href="{{route('page_home')}}" class="logo">
+                    <x-Logo classes="block h-16 w-auto fill-current text-gray-800" />
+                </a>
                 <ul class="d-flex align-items-center list-unstyled gap-4 p-0 m-0">
                     @guest
                     <li><a href="#services">Services</a></li>
