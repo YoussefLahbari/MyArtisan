@@ -18,10 +18,13 @@
 </head>
 
 <body>
-@if(session()->has('msg'))
-    <x-alert msg="{{session('msg')}}"/>
-@endif
-<div class="container_dash">
+    <div class="bg_loader__">
+        <span class="loader"></span>
+    </div>
+    @if(session()->has('msg'))
+    <x-alert msg="{{session('msg')}}" />
+    @endif
+    <div class="container_dash">
         <x-navbar />
         <div class="content_container">
             <div class="top d-flex align-items-center justify-content-between">
@@ -52,25 +55,37 @@
             </div>
         </div>
     </div>
+    <script>
+        window.addEventListener('load', _ => {
+            gsap.fromTo('.bg_loader__', {
+                opacity: 1,
+                ease: 'back'
+            },{
+                opacity: 0,
+                duration : .5,
+                ease: 'back',
+                onComplete: _ => {
+                    document.querySelector('.bg_loader__').remove();
+                }
+            });
+        })
+        let profile = document.querySelector('.profile');
+        let menu = document.querySelector('.menu');
+        let tl = gsap.to(menu, {
+            opacity: 1,
+            paused: true,
+            visibility: 'visible',
+            y: 0,
+            yoyo: true,
+            ease: 'back'
+        });
+        profile.addEventListener('mouseenter', _ => {
+            tl.play();
+        });
+        menu.addEventListener('mouseleave', _ => {
+            tl.reverse();
+        })
+    </script>
 </body>
-<script>
-    let profile = document.querySelector('.profile');
-    let menu = document.querySelector('.menu');
-    let tl = gsap.to(menu, {
-        opacity: 1,
-        paused: true,
-        visibility: 'visible',
-        y: 0,
-        yoyo: true,
-        ease : 'back'
-    });
-    profile.addEventListener('mouseenter', _ => {
-        tl.play();
-    });
-    menu.addEventListener('mouseleave', _ => {
-        tl.reverse();
-    })
-    
-</script>
 
 </html>
