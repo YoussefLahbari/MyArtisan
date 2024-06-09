@@ -119,9 +119,9 @@ body {
   min-width: 200px;
   overflow: auto;
 }
-.messenger-listView .m-header {
+/* .messenger-listView .m-header {
   height: var(--listView-header-height);
-}
+} */
 .messenger-listView .m-header > nav {
   padding: var(--headers-padding);
 }
@@ -1181,4 +1181,7 @@ div.loadingPlaceholder-date {
 .emoji-picker__emojis::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: transparent;
+}
+.logo-chatify{
+  height: 1.8rem;
 }

@@ -1,6 +1,5 @@
 <!-- resources/views/artisans.blade.php -->
 @extends('layouts.app')
-
 @section('content')
 <div class="py-1">
     <!-- Search Bar -->
@@ -47,6 +46,7 @@
 <script>
     const artisans = @json($artisans);
     const users = @json($users);
+
     function addToFavorites(artisanId) {
         // Add the selected artisan to favorites
         alert('Coming Soon!');
@@ -56,6 +56,7 @@
         // Redirect to contact form
         window.location.href = `/chatify/${userId}`;
     }
+
     function selectArtisan(artisanId) {
         const artisan = artisans.find(a => a.id === artisanId);
         const user = users.find(u => u.id === artisan.user_id); // Link artisan to user by user_id
