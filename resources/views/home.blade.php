@@ -52,9 +52,9 @@
         alert('Coming Soon!');
     }
 
-    function contactArtisan(artisanId) {
+    function contactArtisan(userId) {
         // Redirect to contact form
-        window.location.href = `/chatify/${artisanId}`;
+        window.location.href = `/chatify/${userId}`;
     }
     function selectArtisan(artisanId) {
         const artisan = artisans.find(a => a.id === artisanId);
@@ -113,7 +113,7 @@
             <h3 class="text-xl font-semibold mb-2">Client Reviews</h3>
            
             <div class="flex justify-end">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="contactArtisan(${artisan.id})">Contact</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="contactArtisan(${user.id})">Contact</button>
             </div>
         </div>
     `;
