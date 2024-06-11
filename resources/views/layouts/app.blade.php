@@ -18,9 +18,10 @@
 </head>
 <body>
     <style>
-        body{
-            background-image: url('bg.jpg');
+              body {
+            background-image: url('images/bg.jpg');
             background-size: cover;
+            background-position: bottom;
         }
         .form-control, .form-control:hover, .form-control:active{
             background-color: white !important;

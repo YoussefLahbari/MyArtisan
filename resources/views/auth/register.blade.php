@@ -1,142 +1,118 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <h5 class="card-header text-center">{{ __("Welcome to MyArtisan") }}</h5>
+<div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-center text-gray-800">{{ __("Welcome to MyArtisan") }}</h2>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+        <form method="POST" action="{{ route('register') }}" class="mt-8 space-y-4">
+            @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="usertype" class="col-md-4 col-form-label text-md-end">{{ __('Account Type') }}</label>
-
-                            <div class="col-md-6">
-                                <label class="btn type btn-grad-Art">Artisan
-                                    <input type="radio" name="usertype" required autocomplete="usertype" class="d-none" value="Artisan">
-                                </label>
-
-                                <label class="btn type btn-grad" >Client 
-                                    <input type="radio"  name="usertype" required autocomplete="usertype" class="d-none" value="Client">
-                                </label>
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark" style="width: 45%">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="flex items-center">
+                <label for="name" class="w-1/3 text-sm font-medium text-gray-700">{{ __('Name') }}</label>
+                <div class="w-2/3">
+                    <input id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('name') border-red-500 @enderror">
+                    @error('name')
+                        <span class="text-red-500 text-sm mt-1">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
-        </div>
+
+            <div class="flex items-center">
+                <label for="email" class="w-1/3 text-sm font-medium text-gray-700">{{ __('Email Address') }}</label>
+                <div class="w-2/3">
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('email') border-red-500 @enderror">
+                    @error('email')
+                        <span class="text-red-500 text-sm mt-1">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <label for="password" class="w-1/3 text-sm font-medium text-gray-700">{{ __('Password') }}</label>
+                <div class="w-2/3">
+                    <input id="password" type="password" name="password" required autocomplete="new-password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm @error('password') border-red-500 @enderror">
+                    @error('password')
+                        <span class="text-red-500 text-sm mt-1">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <label for="password-confirm" class="w-1/3 text-sm font-medium text-gray-700">{{ __('Confirm Password') }}</label>
+                <div class="w-2/3">
+                    <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <label for="usertype" class="w-1/3 text-sm font-medium text-gray-700">{{ __('Account Type') }}</label>
+                <div class="w-2/3 flex space-x-2">
+                    <label class="btn-grad-Art flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-md cursor-pointer">
+                        Artisan
+                        <input type="radio" name="usertype" value="Artisan" class="hidden" required>
+                    </label>
+                    <label class="btn-grad flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-md cursor-pointer">
+                        Client
+                        <input type="radio" name="usertype" value="Client" class="hidden" required>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{ __('Register') }}
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 @endsection
+
 @section('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll(".col-md-6 .btn.type").forEach(function(label) {
+        document.querySelectorAll(".btn-grad, .btn-grad-Art").forEach(function(label) {
             label.addEventListener("click", function() {
-                document.querySelectorAll(".col-md-6 .btn.type").forEach(function(item) {
-                    item.classList.add("active");
+                document.querySelectorAll(".btn-grad, .btn-grad-Art").forEach(function(item) {
+                    item.classList.remove("opacity-80");
                 });
-                label.classList.remove("active");
+                label.classList.add("opacity-80");
             });
         });
     });
 </script>
 
 <style>
-    .active{
+    .opacity-80 {
         opacity: 80%;
-        border: none;
     }
-        
-        .btn-grad {
-            background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;            
-            width: 45%;
-          }
 
-          .btn-grad:hover {
-            background-position: right center; /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
-          }           
-         .btn-grad-Art {
-            background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;       
-            width: 45%;     
-          }
+    .btn-grad {
+        background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
+        transition: 0.5s;
+        background-size: 200% auto;
+    }
 
-          .btn-grad-Art:hover {
-            background-position: right center; /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
-          }
-          
+    .btn-grad:hover {
+        background-position: right center;
+    }
+
+    .btn-grad-Art {
+        background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+        transition: 0.5s;
+        background-size: 200% auto;
+    }
+
+    .btn-grad-Art:hover {
+        background-position: right center;
+    }
 </style>
 @endsection
+
