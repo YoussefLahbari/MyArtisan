@@ -14,7 +14,11 @@ class ArtisanController extends Controller
      */
     public function index()
     {
-        $artisans = Artisan::with('previousWorks')->get();
+        // $artisans = Artisan::with('previousWorks')->get();
+        $artisans = Artisan::with('previousWorks')->paginate(4);
+        // or
+        //$artisans = Artisan::paginate(4);
+
         $users = User::whereIn('id', $artisans->pluck('user_id'))->get();
         return view('home', compact('artisans', 'users'));
 

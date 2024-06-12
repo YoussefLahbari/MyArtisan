@@ -23,7 +23,9 @@
                 </div>
             </div>
             @endforeach
+            
         </div>
+        {{$artisans->links()}}
 
         <!-- Artisan Details -->
         <div class="w-2/3 p-4 pt-0 h-screen overflow-y-auto" id="artisan-details">
@@ -94,4 +96,5 @@
 
     const artisans = @json($artisans);
 </script>
+
 @endsection

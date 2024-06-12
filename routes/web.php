@@ -18,6 +18,7 @@ Route::get('/',function() {
 
 
 // Zarria Routes
+Route::get('/artisan', [ArtisanController::class, 'index'])->name('artisan.index');
 
 
 // Moukhtari Routes

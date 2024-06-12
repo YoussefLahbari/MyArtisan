@@ -43,7 +43,7 @@
 
     </div>
 </div>
-
+{{$artisans->links()}}
 <script>
     const artisans = @json($artisans);
     const users = @json($users);
@@ -118,7 +118,10 @@
         </div>
     `;
 }
+
 </script>
+<!-- Display pagination links -->
+
 @endsection
 
 
