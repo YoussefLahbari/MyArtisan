@@ -1,108 +1,38 @@
 # MyArtisan
 
-MyArtisan is a web application that serves as a platform for connecting skilled artisans with clients seeking real-life services. Developed with Laravel by a team of computer science students, this project aims to address the challenges faced by artisans in Morocco who struggle to find work outside of their own networks.
+**Top 30 Global Finalist — BeChangeMaker 2024**  
+*Selected out of 700+ applications across 83 countries in the social entrepreneurship program organized by WorldSkills, HP Foundation, and UNESCO-UNEVOC.*
+
+---
 
 ## Overview
 
-In Morocco, artisans often work independently, relying on word-of-mouth referrals or local advertisements to attract clients. MyArtisan aims to modernize this process by providing a centralized platform where artisans can showcase their skills and services, while clients can easily discover and hire them for various tasks.
+MyArtisan is a web application designed to connect independent artisans with local clients. In many regions, skilled trade workers rely strictly on word-of-mouth or local ads to find work. MyArtisan modernizes this process by providing a centralized marketplace where clients can discover, communicate with, and hire qualified artisans for specific tasks.
 
-## Features
+![MyArtisan Demo](./assets/MyArtisan.gif)
 
-- **Artisan Profiles:** Artisans can create detailed profiles showcasing their skills, experience, and portfolio of previous work.
-- **Client Dashboard:** Clients can search for artisans based on location, specialty, and other criteria, view artisan profiles, and hire them for specific tasks.
-- **Real-Time Communication:** Built-in chat functionality allows seamless communication between artisans and clients to discuss project details and requirements.
-- **Admin Dashboard:** Administrators have access to an admin dashboard for managing user accounts, monitoring activity, and generating insights through analytics.
+---
 
-## DataBase
-This is an initial version that you must elaborate based on you needs:
+## Core Features
 
-![Capture d’écran 2024-05-12 204055](https://github.com/YoussefLahbari/MyArtisan/assets/118392925/22a66777-4049-4621-90de-f35b60f79e31)
+- **Artisan & Client Portals:** Profiles for artisans showcasing skills, experience, and service categories, alongside dedicated client search features.
+- **Service Search & Filtering:** Location- and category-based filtering for home tasks, repairs, mounting, and maintenance.
+- **Real-Time Messaging:** Integrated direct chat system (Chatify) enabling direct communication between clients and artisans to discuss scope and pricing.
+- **Admin Management:** Backend administration interface to oversee user accounts, manage service categories, and monitor platform activity.
 
+---
 
-## Getting Started
+## Technical Stack
 
-To contribute to MyArtisan, follow these steps:
+- **Backend:** PHP / Laravel (MVC Architecture)
+- **Frontend:** HTML5, CSS3, JavaScript, Tailwind CSS / Blade
+- **Database:** MySQL (Relational Schema: Users, Artisans, Services, Reviews, Locations)
+- **Communication:** Real-time chat integration (Chatify)
 
-1. **Request Contribution Access**:
-   - Since MyArtisan is a private repository, send your GitHub username to the project manager (`Youssef Lahbari`) to be added as a contributor. Once your request is approved, you'll receive access to contribute to the repository. Make sure you have your GitHub credentials (username and password or personal access token) ready for authentication.
+---
 
-2. **Clone the Repository**:
-   - Clone the main repository to your local machine using the `git clone` command:
-     ```
-     git clone https://github.com/YoussefLahbari/MyArtisan.git
-     ```
-    
-3. **Add Remote Origin**:
-   - Once you've been granted access to the repository, set the remote origin URL to your forked repository:
-     ```bash
-     git remote add origin https://github.com/YoussefLahbari/MyArtisan.git
-     ```
+## Recognition & Certification
 
-4. **Create a Feature Branch**:
-   - Create a new feature branch based on the main branch using the naming convention described above:
-     ```bash
-     git checkout -b lastname.key-description-word
-     ```
+This project was developed as a capstone initiative and was selected for the **BeChangeMaker 2024** incubation program, receiving dedicated business development and tech coaching from HP and WorldSkills mentors.
 
-5. **Set Up Environment Variables**:
-   - Rename the `.env.example` file to `.env` and configure the database connection settings in the `.env` file according to your local environment.
-   - 
-5.1. **Install Composer dependencies:** ```composer install```
-
-5.2. **Install NPM dependencies:** ```npm install ```
-   
-5.3. **Generate application key:** ```php artisan key:generate ```
-
-5.4. **Run database migrations:** ```php artisan migrate```
-
-5.5. **Serve the application** ```php artisan serve```
-
-
-6. **Work on Your Feature**:
-   - Implement your feature or task in the feature branch, making regular commits as you progress:
-     ```bash
-     git add .
-     git commit -m "Your descriptive commit message"
-     git push origin lastname.key-description-word
-     ```
-
-7. **Submit a Pull Request**:
-   - Once your feature is ready, submit a pull request from your feature branch to the main branch of the original repository:
-     - Navigate to the main repository on GitHub and click on the "New pull request" button.
-     - Select the main branch of the original repository as the base branch and your feature branch as the compare branch.
-     - Provide a clear title and description for your pull request, explaining the changes you've made.
-     - Click on the "Create pull request" button to submit your pull request.
-
-8. **Review and Merge**:
-   - Participate in the code review process by reviewing pull requests from other team members and addressing feedback on your own pull requests.
-   - After approval, your pull request will be merged into the main branch, and your changes will become part of the project.
-
-If you have any questions or need assistance during the contribution process, don't hesitate to reach out to the project manager or other team members for support.
-
-## Usage
-
-Once the development server is running, you can access the application at `http://localhost:8000`. From there, you can register as either an artisan or a client, create profiles, search for artisans or clients, initiate chats, and perform other actions according to your role.
-
-## Contribution
-
-We welcome contributions from the community to enhance MyArtisan. If you encounter any bugs, have feature requests, or would like to contribute code, please feel free to open an issue or submit a pull request. Please review our contribution guidelines before making any contributions.
-
-## License
-
-All Rights Reserved.
-
-Copyright (c) 2024 MyArtisan
-
-This project and its source code are proprietary and confidential. No part of this code may be reproduced, distributed, or used in any form or by any means without the prior written permission of the copyright holder.
-
-## Contact
-
-For any inquiries or further information about MyArtisan, please contact the project maintainers:
-
-- Youssef Lahbari: 2003050800361@ofppt-edu.ma
-- Youssef Ghafir: 2004062800157@ofppt-edu.ma
-- Youssef Keblaoui: kablaoui.youssef@ofppt-edu.ma
-- Abderahman Zarria: 2004022900160@ofppt-edu.ma
-- Mohammed Mokhtari: 2003032600307@ofppt-edu.ma
-
-
+![BeChangeMaker Certificate](./assets/BCM2024_top30_certificate_Artisans.png)
