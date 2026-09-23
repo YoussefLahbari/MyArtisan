@@ -1,6 +1,6 @@
 # MyArtisan
 
-> **Note:** This repository contains an early, incomplete version of an older project (the final production version was built with React and hosted in a separate, private repository). To evaluate my current coding standards and enterprise PHP architecture (MVC, OOP), please check out my latest project: [Typo3Festivo](https://github.com/YoussefLahbari/Typo3Festivo)
+> **Note:** This repository contains an early, incomplete version of an older project (the final production version was built with Inertia.js and hosted in a separate, private repository). To evaluate my current coding standards and enterprise PHP architecture (MVC, OOP), please check out my latest project: [Typo3Festivo](https://github.com/YoussefLahbari/Typo3Festivo)
  
 **Top 30 Global Finalist — BeChangeMaker 2024**  
 *Selected out of 700+ applications across 83 countries in the social entrepreneurship program organized by WorldSkills, HP Foundation, and UNESCO-UNEVOC.*
